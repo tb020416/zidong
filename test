@@ -1,0 +1,23 @@
+import chrome_webdriver  
+from selenium import webdriver
+
+# 替换为您要打开的文件 URL  
+url = "https://github.com/username/repo-name/blob/master/filename.txt"
+
+# 创建 Chrome 浏览器实例  
+driver = webdriver.Chrome()
+
+# 打开 Chrome 浏览器的 URL  
+driver.get(url)
+
+# 等待 5 秒钟，以便浏览器加载文件  
+driver.implicitly_wait(5)
+
+# 打开文件  
+driver.find_element_by_xpath("//a[contains(text(),'Open')]").click()
+
+# 等待 5 秒钟，以便浏览器加载文件  
+driver.implicitly_wait(5)
+
+# 关闭浏览器  
+driver.quit()  
